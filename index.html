@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gallery test</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="gallery.js"></script>
+</head>
+
+<body>
+
+    <div class="categories">
+        <label>
+            <input type="radio" name="category" value="all" checked onchange="gallery.filter('')">
+            <span>All</span>
+        </label>
+
+        <label>
+            <input type="radio" name="category" value="dogs" onchange="gallery.filter('dogs')">
+            <span>Dogs</span>
+        </label>
+        
+        <label>
+            <input type="radio" name="category" value="cats" onchange="gallery.filter('cats')">
+            <span>Cats</span>
+        </label>
+        
+        <label>
+            <input type="radio" name="category" value="hamsters" onchange="gallery.filter('hamsters')">
+            <span>Hamsters</span>
+        </label>
+    </div>
+
+    <div id="gallery" class="gallery" data-gap="10" data-row-capacity="5" style="width: 800px">
+
+        <div class="gallery-item" data-category="cats">
+            <img src="img/cat_1.jpg">
+        </div>
+
+        <div class="gallery-item" data-size="1/2" data-category="cats">
+            <img src="img/cat_2.jpg">
+        </div>
+
+        <div class="gallery-item" data-category="dogs">
+            <img src="img/dog_1.jpg">
+        </div>
+
+        <div class="gallery-item" data-category="hamsters">
+            <img src="img/hamster_1.jpg">
+        </div>
+        
+        <div class="gallery-item" data-category="dogs">
+            <img src="img/dog_2.jpg">
+        </div>
+
+        <div class="gallery-item" data-size="1/2" data-category="hamsters">
+            <img src="img/hamster_2.jpg">
+        </div>
+
+        <div class="gallery-item" data-size="2/1" data-category="cats">
+            <img src="img/cat_3.jpg">
+        </div>
+
+        <div class="gallery-item" data-size="1/2" data-category="cats">
+            <img src="img/cat_4.jpg">
+        </div>
+
+        <div class="gallery-item" data-size="2/1" data-category="dogs">
+            <img src="img/dog_3.jpg">
+        </div>
+        
+        <div class="gallery-item" data-category="hamsters">
+            <img src="img/hamster_3.jpg">
+        </div>
+        
+    </div>
+
+    <script>
+        var gallery = new Gallery("#gallery", 1.25);
+        gallery.animationDuration = 500;
+    </script>
+</body>
+
+</html>
